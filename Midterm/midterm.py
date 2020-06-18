@@ -5,6 +5,9 @@
 import csv
 import os
 import sys
+import time
+
+start = time.time()
 
 
 # This function takes in parameter file and reads data from the csv file into a list
@@ -225,7 +228,9 @@ def main():
             remove_file()
         # Call the total_function and exit_program function if choice is 5
         elif choice == "5":
+            end = time.time()
             total_function(items)
+            print(f"Runtime: {round((end - start), 4)}")
             exit_program()
         # If the choice does not match with the command menu, print error message
         else:
